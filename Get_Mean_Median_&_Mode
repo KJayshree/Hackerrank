@@ -1,0 +1,38 @@
+size = int(input())
+a = list(map(int, input().split()))
+
+def get_mean(size, a):
+    mean = sum(a)/size
+    return mean
+
+print(get_mean(size,a))
+
+def get_median(size,a):
+    sorted_list = sorted(a)
+    if size%2 !=0 :
+        i = int((size/2))
+        median = sorted_list[i]
+    elif  size%2 ==0:
+        i = int((size/2))
+        median = (sorted_list[i-1] + sorted_list[(i)])/2
+    return median
+
+print(get_median(size,a))
+
+def get_mode(a):
+    current = 0
+    mode = 0
+    count, max = 0, 0
+    a.sort()
+    for i in a:
+        if (i==current):
+            count +=1
+        else:
+            count = 1
+            current = i
+        if(count>max):
+            max=count
+            mode = i
+    return mode
+
+print(get_mode(a))
