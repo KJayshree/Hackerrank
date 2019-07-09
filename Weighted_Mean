@@ -1,0 +1,11 @@
+N = int(input())
+X = list(map(int,input().split()))
+W = list(map(int,input().split()))
+
+add = 0.0
+for i in range(N):
+    add = add + X[i]*W[i]
+   
+
+weighted_mean = add/sum(W)
+print(round(weighted_mean,1))
