@@ -1,0 +1,10 @@
+N = int(input())
+X = list(map(int,input().split()))
+mean = sum(X)/N
+delta = 0.0
+for i in range(N):
+    delta = delta + (X[i] - mean)*(X[i] - mean)
+
+stdev = (delta/N)**(1/2.0)
+print(round(stdev,1))
+
